@@ -1,0 +1,195 @@
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: url("../Barlow_Semi_Condensed/BarlowSemiCondensed-SemiBold.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: url("../Barlow_Semi_Condensed/BarlowSemiCondensed-Bold.ttf");
+  font-weight: bold;
+}
+
+/*PAGE RESETTING*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*BACKGROUND SETTING*/
+
+body {
+  background: radial-gradient(#1f3756, #141539);
+  height: 100vh;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/*HEADER*/
+header {
+  border: 3px solid hsl(217, 16%, 45%);
+  margin: 1.5rem !important;
+  margin-top: 1.5rem !important;
+  padding: 1rem;
+  font-size: 0.8rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+header h1 {
+  color: white;
+  margin-bottom: 0;
+  line-height: 0.8em;
+}
+
+#score-container {
+  width: 35%;
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+  align-content: flex-start;
+}
+
+#score-container h6 {
+  color: hsl(229, 64%, 46%);
+  padding-top: 1rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0;
+}
+
+#score {
+  font-weight: bold;
+  font-size: 3.3rem;
+  color: hsl(229, 25%, 31%);
+  letter-spacing: 0.1rem;
+  margin: 0;
+  line-height: 1;
+}
+
+/*AREA GAME DIV*/
+#areaGame {
+  height: 50vh;
+  position: relative;
+}
+.background {
+  position: relative;
+  height: 100%;
+  background-image: url("../../images/bg-pentagon.svg");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 3rem;
+}
+
+#areaGame button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  text-align: center;
+  display: block;
+  outline: none;
+  position: absolute;
+  border: none;
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.scissor {
+  background-image: url("../../images/icon-scissors.svg");
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+  box-shadow: inset 0 3px 2px lightgray, 0 0 0 8px hsl(40, 84%, 53%),
+    0 2px 0 8px hsl(39, 89%, 49%);
+}
+
+.paper {
+  background-image: url("../../images/icon-paper.svg");
+  right: 10%;
+  top: 30%;
+  box-shadow: inset 0 3px 2px lightgray, 0 0 0 8px hsl(230, 89%, 62%),
+    0 2px 0 8px hsl(230, 89%, 65%);
+}
+
+.spock {
+  background-image: url("../../images/icon-spock.svg");
+  left: 10%;
+  top: 30%;
+  box-shadow: inset 0 3px 2px lightgray, 0 0 0 8px hsl(189, 59%, 53%),
+    0 2px 0 8px hsl(189, 58%, 57%);
+}
+
+.rock {
+  background-image: url("../../images/icon-rock.svg");
+  bottom: 15%;
+  right: 20%;
+  box-shadow: inset 0 3px 2px lightgray, 0 0 0 8px hsl(349, 71%, 52%),
+    0 2px 0 8px hsl(349, 70%, 56%);
+}
+
+.lizard {
+  background-image: url("../../images/icon-lizard.svg");
+  bottom: 15%;
+  left: 20%;
+  box-shadow: inset 0 3px 2px lightgray, 0 0 0 8px hsl(261, 73%, 60%),
+    0 2px 0 8px hsl(261, 72%, 63%);
+}
+
+/*MODAL*/
+#rulesModal {
+  height: 100vh;
+}
+
+.modal-dialog-centered {
+  align-items: stretch;
+}
+
+.modal-header {
+  justify-content: center;
+  border: none;
+}
+
+.modal-header h3 {
+  margin-top: 3rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: hsl(229, 25%, 31%);
+}
+
+.modal-header button {
+  position: absolute;
+  z-index: 5;
+  bottom: 5%;
+}
+
+.modal-body img {
+  margin-top: 4rem;
+  width: 100%;
+}
+
+/*RULES BUTTON*/
+#rulesButton {
+  display: block;
+  margin: 0 auto;
+  width: 35%;
+  border: 3px solid hsl(217, 16%, 45%);
+  border-radius: 10px;
+  color: white;
+}
+
+#rulesButton:hover {
+  border: 3px solid white;
+}
+
+@media screen and (min-width: 568px) {
+  header {
+    max-width: ;
+  }
+}

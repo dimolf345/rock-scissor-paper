@@ -1,37 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <!-- Boostrap CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./assets/bootstrap/css/bootstrap.min.css"
+    />
+    <!-- Master CSS IMPORT -->
+    <link rel="stylesheet" href="./assets/css/master.css" />
+    <!-- Google Fonts Import -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <!-- 
+    Score Rules You Picked The House Picked You Win You Lose Play Again -->
 
-  Score
-  Rules
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="uppercase">
+        <h1>rock</h1>
+        <h1>scissor</h1>
+        <h1>paper</h1>
+        <h1>lizard</h1>
+        <h1>spock</h1>
+      </div>
+      <div id="score-container">
+        <h6 class="uppercase">score</h6>
+        <span id="score">12</span>
+      </div>
+    </header>
+    <main>
+      <div id="areaGame">
+        <div class="background">
+          <button class="scissor"></button>
+          <button class="paper"></button>
+          <button class="rock"></button>
+          <button class="lizard"></button>
+          <button class="spock"></button>
+        </div>
+      </div>
+      <!-- Rules Modal -->
+      <div
+        class="modal fade"
+        id="rulesModal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="rulesModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title uppercase" id="rulesModalLabel">rules</h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img src="./images/image-rules-bonus.svg" alt="rules image" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        id="rulesButton"
+        type="button"
+        class="uppercase btn btn-outline-secondary"
+        data-bs-toggle="modal"
+        data-bs-target="#rulesModal"
+      >
+        rules
+      </button>
+    </main>
 
-  You Picked
-  The House Picked
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
 
-  You Win
-  You Lose
-
-  Play Again
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <!-- Boostrap JS file -->
+    <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
