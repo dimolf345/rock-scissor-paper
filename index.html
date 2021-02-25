@@ -54,13 +54,37 @@
       </div>
     </header>
     <main>
+      <!-- Area Game div -->
       <div id="areaGame">
-        <div class="background">
-          <button class="scissor"></button>
-          <button class="paper"></button>
-          <button class="rock"></button>
-          <button class="lizard"></button>
-          <button class="spock"></button>
+        <!-- box with buttons to start playing -->
+        <div id="playerChoice" class="background">
+          <button data-game="scissor" class="game-btn scissor"></button>
+          <button data-game="paper" class="game-btn paper"></button>
+          <button data-game="rock" class="game-btn rock"></button>
+          <button data-game="lizard" class="game-btn lizard"></button>
+          <button data-game="spock" class="game-btn spock"></button>
+        </div>
+        <!-- Div showed after user clicks one of the button -->
+        <div id="gameMatch">
+          <div class="pick">
+            <h1 class="uppercase">you picked</h1>
+            <div class="button-container">
+              <button class="game-btn scissor"></button>
+            </div>
+          </div>
+          <div class="pick">
+            <h1 class="uppercase">the house picked</h1>
+            <div class="button-container">
+              <button class="game-btn blank"></button>
+            </div>
+          </div>
+          <!-- Div that is showed after each round -->
+          <div id="winLose">
+            <h1 class="uppercase text-center">you win</h1>
+            <button id="play-again" class="btn btn-lg uppercase">
+              play again
+            </button>
+          </div>
         </div>
       </div>
       <!-- Rules Modal -->
@@ -100,15 +124,17 @@
         rules
       </button>
     </main>
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+    <!-- <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </footer> -->
 
     <!-- Boostrap JS file -->
     <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

@@ -46,6 +46,7 @@ header h1 {
   color: white;
   margin-bottom: 0;
   line-height: 0.8em;
+  font-size: 1.1;
 }
 
 #score-container {
@@ -74,20 +75,20 @@ header h1 {
 
 /*AREA GAME DIV*/
 #areaGame {
-  height: 50vh;
+  height: 60vh;
   position: relative;
 }
 .background {
   position: relative;
   height: 100%;
   background-image: url("../../images/bg-pentagon.svg");
-  background-size: 60%;
+  background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
   margin-bottom: 3rem;
 }
 
-#areaGame button {
+.game-btn {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -101,45 +102,128 @@ header h1 {
   background-repeat: no-repeat;
 }
 
+/*In order to reuse button classes, used :nth-child property for
+buttons positioning*/
+#playerChoice button:nth-child(1) {
+  left: 50%;
+  top: 13%;
+}
+
+#playerChoice button:nth-child(2) {
+  right: 10%;
+  top: 33%;
+}
+
+#playerChoice button:nth-child(3) {
+  bottom: 15%;
+  right: 20%;
+}
+
+#playerChoice button:nth-child(4) {
+  bottom: 15%;
+  left: 20%;
+}
+
+#playerChoice button:nth-child(5) {
+  left: 10%;
+  top: 33%;
+}
+
+/*Button with icons as background image*/
+.blank {
+  background-color: hsl(229, 25%, 31%);
+}
 .scissor {
   background-image: url("../../images/icon-scissors.svg");
-  left: 50%;
-  top: 10%;
   transform: translateX(-50%);
-  box-shadow: inset 0 3px 2px lightgray, 0 0 0 8px hsl(40, 84%, 53%),
-    0 2px 0 8px hsl(39, 89%, 49%);
+  box-shadow: inset 0 3px 2px lightgray, 0 0 0 11px hsl(40, 84%, 53%),
+    0 3px 0 11px hsl(29, 78%, 44%);
 }
 
 .paper {
   background-image: url("../../images/icon-paper.svg");
-  right: 10%;
-  top: 30%;
-  box-shadow: inset 0 3px 2px lightgray, 0 0 0 8px hsl(230, 89%, 62%),
-    0 2px 0 8px hsl(230, 89%, 65%);
+  box-shadow: inset 0 3px 2px lightgray, 0 0 0 11px hsl(230, 89%, 62%),
+    0 3px 0 11px hsl(230, 65%, 46%);
 }
 
 .spock {
   background-image: url("../../images/icon-spock.svg");
-  left: 10%;
-  top: 30%;
-  box-shadow: inset 0 3px 2px lightgray, 0 0 0 8px hsl(189, 59%, 53%),
-    0 2px 0 8px hsl(189, 58%, 57%);
+  box-shadow: inset 0 3px 2px lightgray, 0 0 0 11px hsl(189, 59%, 53%),
+    0 3px 0 11px hsl(195, 56%, 43%);
 }
 
 .rock {
   background-image: url("../../images/icon-rock.svg");
-  bottom: 15%;
-  right: 20%;
-  box-shadow: inset 0 3px 2px lightgray, 0 0 0 8px hsl(349, 71%, 52%),
-    0 2px 0 8px hsl(349, 70%, 56%);
+  box-shadow: inset 0 3px 2px lightgray, 0 0 0 11px hsl(349, 71%, 52%),
+    0 3px 0 11px hsl(349, 69%, 44%);
 }
 
 .lizard {
   background-image: url("../../images/icon-lizard.svg");
-  bottom: 15%;
-  left: 20%;
-  box-shadow: inset 0 3px 2px lightgray, 0 0 0 8px hsl(261, 73%, 60%),
-    0 2px 0 8px hsl(261, 72%, 63%);
+  box-shadow: inset 0 3px 2px lightgray, 0 0 0 11px hsl(261, 73%, 60%),
+    0 3px 0 11px hsl(261, 56%, 42%);
+}
+
+/*GAMEMATCH DIV*/
+#gameMatch {
+  color: white;
+  display: none;
+  flex-direction: row;
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+.pick {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-container {
+  order: -1;
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.button-container > button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110px;
+  height: 110px;
+}
+
+.pick h1 {
+  margin: 2rem 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  text-align: center;
+}
+
+/*WINLOSE*/
+#winLose {
+  display: none;
+  width: 100%;
+}
+
+#winLose h1 {
+  width: 100%;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#winLose > button {
+  background-color: white;
+  display: block;
+  width: 65%;
+  margin: 0 auto;
+  padding: 0.6rem;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  color: hsl(217, 16%, 45%);
 }
 
 /*MODAL*/
@@ -182,14 +266,164 @@ header h1 {
   border: 3px solid hsl(217, 16%, 45%);
   border-radius: 10px;
   color: white;
+  letter-spacing: 0.15rem;
 }
 
 #rulesButton:hover {
   border: 3px solid white;
 }
 
-@media screen and (min-width: 568px) {
+@media screen and (min-width: 400px) {
+  .background {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 568px) and (max-width: 768px) {
   header {
-    max-width: ;
+    max-width: 70%;
+    margin: 1.5rem auto !important;
+  }
+
+  .game-btn {
+    width: 100px;
+    height: 100px;
+  }
+
+  .background {
+    height: 60vh;
+    width: 80%;
+    background-size: 60%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+  header {
+    max-width: 50%;
+    margin: 1.5rem auto !important;
+  }
+
+  .game-btn {
+    width: 100px;
+    height: 100px;
+  }
+
+  .background {
+    width: 60%;
+    background-size: 55%;
+  }
+
+  #playerChoice button:nth-child(1) {
+    left: 50%;
+    top: 10%;
+  }
+
+  #playerChoice button:nth-child(2) {
+    right: 20%;
+    top: 33%;
+  }
+
+  #playerChoice button:nth-child(3) {
+    bottom: 10%;
+    right: 25%;
+  }
+
+  #playerChoice button:nth-child(4) {
+    bottom: 10%;
+    left: 25%;
+  }
+
+  #playerChoice button:nth-child(5) {
+    left: 20%;
+    top: 33%;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  header {
+    max-width: 50%;
+    margin: 1.5rem auto !important;
+  }
+
+  #score {
+    font-size: 4rem;
+  }
+
+  .background {
+    width: 50%;
+    max-width: 800px;
+    background-size: 45%;
+  }
+
+  .game-btn {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    padding: 1rem 2rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+
+  #score-container {
+    width: 25%;
+  }
+
+  .scissor {
+    box-shadow: inset 0 3px 2px lightgray, 0 0 0 12px hsl(40, 84%, 53%),
+      0 2px 0 12px hsl(39, 89%, 49%);
+  }
+
+  .paper {
+    box-shadow: inset 0 3px 2px lightgray, 0 0 0 12px hsl(230, 89%, 62%),
+      0 2px 0 12px hsl(230, 89%, 65%);
+  }
+
+  .spock {
+    box-shadow: inset 0 3px 2px lightgray, 0 0 0 12px hsl(189, 59%, 53%),
+      0 2px 0 12px hsl(189, 58%, 57%);
+  }
+
+  .rock {
+    box-shadow: inset 0 3px 2px lightgray, 0 0 0 12px hsl(349, 71%, 52%),
+      0 2px 0 12px hsl(349, 70%, 56%);
+  }
+
+  .lizard {
+    box-shadow: inset 0 3px 2px lightgray, 0 0 0 12px hsl(261, 73%, 60%),
+      0 2px 0 12px hsl(261, 72%, 63%);
+  }
+
+  #playerChoice button:nth-child(2) {
+    right: 20%;
+    top: 33%;
+  }
+
+  #playerChoice button:nth-child(3) {
+    bottom: 10%;
+    right: 25%;
+  }
+
+  #playerChoice button:nth-child(4) {
+    bottom: 10%;
+    left: 25%;
+  }
+
+  #playerChoice button:nth-child(5) {
+    left: 20%;
+    top: 33%;
+  }
+
+  #rulesButton {
+    height: 50px;
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 150px;
+    font-size: 1.3rem;
   }
 }
