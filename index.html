@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
     <link
       rel="icon"
       type="image/png"
@@ -23,68 +23,46 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,700;1,600&display=swap"
       rel="stylesheet"
     />
-
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
-    <!-- 
-    Score Rules You Picked The House Picked You Win You Lose Play Again -->
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
     <header>
-      <div class="uppercase">
-        <h1>rock</h1>
-        <h1>scissor</h1>
-        <h1>paper</h1>
-        <h1>lizard</h1>
-        <h1>spock</h1>
+      <div class="logo-container">
+        <img src="./images/logo-bonus.svg" alt="game-logo" />
       </div>
-      <div id="score-container">
-        <h6 class="uppercase">score</h6>
-        <span id="score"></span>
+      <div id="score-container" class="text-center">
+        <h2 class="text-uppercase">score</h2>
+        <p id="score"></p>
       </div>
     </header>
+    <!-- Area Game section -->
     <main>
-      <!-- Area Game div -->
-      <div id="areaGame">
-        <!-- box with buttons to start playing -->
-        <div id="playerChoice" class="background">
-          <button data-game="scissor" class="game-btn scissor"></button>
-          <button data-game="paper" class="game-btn paper"></button>
-          <button data-game="rock" class="game-btn rock"></button>
-          <button data-game="lizard" class="game-btn lizard"></button>
-          <button data-game="spock" class="game-btn spock"></button>
+      <div id="playerChoice">
+        <button data-game="scissor" class="game-btn scissor"></button>
+        <button data-game="paper" class="game-btn paper"></button>
+        <button data-game="rock" class="game-btn rock"></button>
+        <button data-game="lizard" class="game-btn lizard"></button>
+        <button data-game="spock" class="game-btn spock"></button>
+      </div>
+      <div id="gameMatch">
+        <div class="pick">
+          <h1>you picked</h1>
+          <!-- Blank button are used to add winning animation effect with CSS -->
+          <div class="button-container">
+            <button class="game-btn blank"></button>
+          </div>
         </div>
-        <!-- Div showed after user clicks one of the button -->
-        <div id="gameMatch">
-          <div class="pick">
-            <h1 class="uppercase">you picked</h1>
-            <div class="button-container">
-              <button class="game-btn scissor"></button>
-            </div>
+        <div class="pick">
+          <h1>the house picked</h1>
+          <div class="button-container">
+            <button class="game-btn blank"></button>
           </div>
-          <div class="pick">
-            <h1 class="uppercase">the house picked</h1>
-            <div class="button-container">
-              <button class="game-btn blank"></button>
-            </div>
-          </div>
-          <!-- Div that is showed after each round -->
-          <div id="winLose">
-            <h1 class="uppercase text-center"></h1>
-            <button id="playAgain" class="btn btn-lg uppercase">
-              play again
-            </button>
-          </div>
+        </div>
+        <div id="winLose">
+          <h1 class="uppercase text-center"></h1>
+          <button id="playAgain" class="btn btn-lg uppercase">
+            play again
+          </button>
         </div>
       </div>
       <!-- Rules Modal -->
@@ -100,7 +78,7 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h3 class="modal-title uppercase" id="rulesModalLabel">rules</h3>
+              <h2 class="modal-title uppercase" id="rulesModalLabel">rules</h2>
               <button
                 type="button"
                 class="btn-close"
@@ -117,24 +95,14 @@
       <button
         id="rulesButton"
         type="button"
-        class="uppercase btn btn-outline-secondary"
+        class="btn-outline-secondary"
         data-bs-toggle="modal"
         data-bs-target="#rulesModal"
       >
         rules
       </button>
     </main>
-    <!-- <footer>
-      <div class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
-      </div>
-    </footer> -->
-
-    <!-- Boostrap JS file -->
     <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>
